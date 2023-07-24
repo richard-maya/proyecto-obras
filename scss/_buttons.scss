@@ -1,0 +1,36 @@
+// BUTTONS
+
+a.btn, button.btn{
+    border-radius: 0rem;
+    font-size: 1.25rem;
+
+    &.not-allowed {
+        cursor: not-allowed;
+    }
+}
+
+@each $name, $color in $balbek-colors {
+    .btn-#{$name} {
+        background-color: $color;
+        border-color: $color;
+        color: set-text-color($color);
+        @include transition(0.3s);
+        &:hover, &:focus, &.focus, &:active, &.active{
+            background-color: darken($color, 10%);
+            border-color: darken($color, 10%);
+            color: set-text-color(darken($color, 10%));
+        }
+    }
+    
+    .btn-#{$name}-outline {
+        background-color: rgba(255,255,255,0);
+        border-color: $color;
+        color: $color;
+        @include transition(0.3s);
+        &:hover, &:focus, &.focus, &:active, &.active{
+            background-color: $color;
+            border-color: $color;
+            color: set-text-color($color);
+        }
+    }
+}

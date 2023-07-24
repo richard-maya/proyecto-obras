@@ -1,0 +1,31 @@
+// COMPONENTS
+
+.accordion-item{
+    button.accordion-button{
+        background: lighten($balbek-orange, 20%);
+        color: white;
+        font-size: 1.3rem;
+        font-weight: 600;
+
+        &:after{
+            color: white;
+        }
+
+        &[aria-expanded=true]{
+            background: $balbek-orange;
+        }
+
+        &:focus{
+            box-shadow: 0 3px 6px rgba(0,0,0,0.5);
+        }
+    }
+}
+
+table.table{
+    thead, tbody{
+        th{
+            background-color: lighten($balbek-orange, 10%);
+            color: white;
+        }
+    }
+}

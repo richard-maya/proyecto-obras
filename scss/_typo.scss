@@ -1,0 +1,44 @@
+// TYPOGRAPHY
+
+@import url("https://use.typekit.net/wwo6mmh.css");
+
+
+*:not(i){
+    font-family: open-sans, sans-serif;
+    font-display: swap;
+}
+
+@each $name, $color in $balbek-colors {
+    .text-#{$name} {
+        color: $color;
+    }
+    
+    .bg-#{$name} {
+        background-color: $color;
+        color: set-text-color($color);
+    }
+}
+
+$fontSizeUtility: (2.5rem, 2.25rem, 2rem, 1.75rem, 1.5rem, 1.25rem);
+
+@for $i from 1 through 6 {
+    h#{$i} {
+        font-size: nth($fontSizeUtility, $i);
+        font-weight: 700;
+    }
+}
+
+a{
+    color: black;
+    @include transition(0.3s);
+
+    &:hover{
+        color: $balbek-orange;
+    }
+}
+
+ul.list-inline{
+    li.list-inline-item{
+        padding: 0rem 0.5rem;
+    }
+}
